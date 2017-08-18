@@ -4,6 +4,11 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 
+import snake from './snake'
+import './snake/css/snake-theme.css'
+
+Vue.use(snake);
+
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */

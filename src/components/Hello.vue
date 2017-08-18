@@ -1,22 +1,13 @@
 <template>
   <div class="hello">
-    <h1>{{ msg }}</h1>
-    <h2>Essential Links</h2>
-    <ul>
-      <li><a href="https://vuejs.org" target="_blank">Core Docs</a></li>
-      <li><a href="https://forum.vuejs.org" target="_blank">Forum</a></li>
-      <li><a href="https://gitter.im/vuejs/vue" target="_blank">Gitter Chat</a></li>
-      <li><a href="https://twitter.com/vuejs" target="_blank">Twitter</a></li>
-      <br>
-      <li><a href="http://vuejs-templates.github.io/webpack/" target="_blank">Docs for This Template</a></li>
-    </ul>
-    <h2>Ecosystem</h2>
-    <ul>
-      <li><a href="http://router.vuejs.org/" target="_blank">vue-router</a></li>
-      <li><a href="http://vuex.vuejs.org/" target="_blank">vuex</a></li>
-      <li><a href="http://vue-loader.vuejs.org/" target="_blank">vue-loader</a></li>
-      <li><a href="https://github.com/vuejs/awesome-vue" target="_blank">awesome-vue</a></li>
-    </ul>
+    {{msg}}
+    <div>
+      <button @click="SNToast('这是一条信息')">toast</button>
+      <button @click="SNLoading.show">loadingshow</button>
+      <button @click="SNLoading.hidn">loadinghidn</button>
+      <button @click="SNSuccess()">success</button>
+      <button @click="SNError()">error</button>
+    </div>
   </div>
 </template>
 
@@ -25,7 +16,17 @@ export default {
   name: 'hello',
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App'
+      msg: 'Welcome to snake Vue.js App'
+    }
+  },
+  methods:{
+    showtoast(){
+//      this.SNToast({'type':'loading'});
+      this.SNToast.loading();
+//      this.SNSuccess('1111');
+//      this.SNError('1111');
+//      this.SNToast(1111);
+//      this.SNToast({'data':'123'});
     }
   }
 }
