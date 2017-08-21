@@ -2,11 +2,11 @@
   <div class="hello">
     {{msg}}
     <div>
-      <button @click="SNToast('这是一条信息')">toast</button>
-      <button @click="SNLoading.show">loadingshow</button>
-      <button @click="SNLoading.hidn">loadinghidn</button>
-      <button @click="SNSuccess()">success</button>
-      <button @click="SNError()">error</button>
+      <button @click="SNToast('123')">toast</button>
+      <button @click="SNToast.loading.show">loadingshow</button>
+      <button @click="SNToast.loading.hide">loadinghidn</button>
+      <button @click="SNToast.success()">success</button>
+      <button @click="SNToast.error()">error</button>
     </div>
   </div>
 </template>
@@ -21,12 +21,7 @@ export default {
   },
   methods:{
     showtoast(){
-//      this.SNToast({'type':'loading'});
-      this.SNToast.loading();
-//      this.SNSuccess('1111');
-//      this.SNError('1111');
-//      this.SNToast(1111);
-//      this.SNToast({'data':'123'});
+      this.SNToast({'type':'success',msg:'12312312'});
     }
   }
 }
