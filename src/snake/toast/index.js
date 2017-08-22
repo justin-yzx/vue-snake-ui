@@ -56,9 +56,9 @@ toast.loading.show=()=>{
   creatToast(options)
 }
 
-toast.loading.hidn=(options)=>{
+toast.loading.hide=(options)=>{
   options?options:options={};
-  instance.hidn();
+  instance.hide();
 }
 
 

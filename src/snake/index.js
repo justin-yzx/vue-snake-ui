@@ -8,8 +8,8 @@ export default{
   install(Vue){
     //toast提示
     Vue.prototype.SNToast = toast;
-    Vue.prototype.SNSuccess =toast.success;
-    Vue.prototype.SNError =toast.error;
-    Vue.prototype.SNLoading =toast.loading;
+    Vue.prototype.SNToast.success =toast.success;
+    Vue.prototype.SNToast.error =toast.error;
+    Vue.prototype.SNToast.loading =toast.loading;
   }
 }

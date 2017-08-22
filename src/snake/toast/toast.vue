@@ -13,7 +13,6 @@
         <i class="toast-loading"></i>
         <div class="toast-tip">{{loadingmsg}}</div>
       </div>
-
 	</div>
 </template>
 
@@ -32,10 +31,10 @@
         methods: {
             remove(){
               setTimeout(()=>{
-                this.hidn();
+                this.hide();
               },this.remain*1000)
             },
-            hidn(){
+            hide(){
               try {
                 document.getElementsByTagName('body')[0].removeChild(this.$el);
               }catch (e){
