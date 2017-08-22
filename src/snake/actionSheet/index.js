@@ -9,8 +9,7 @@ let instance;
 
 const actionSheet= (options)=> {
   if(typeof options =='string'||typeof options =='number'){
-    options={
-    }
+    return false;
   }
   creatActionSheet(options);
 }

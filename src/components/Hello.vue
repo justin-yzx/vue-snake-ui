@@ -25,21 +25,23 @@ export default {
       this.SNToast({'type':'success',msg:'12312312'});
     },
     showActionSheet(){
+
+        var arr=[
+          {key:'1',value:'我是按钮1','aaa':'1231231'},
+          {key:'2',value:'我是按钮2'},
+          {key:'3',value:'我是按钮3'},
+        ]
+
         this.SNActionSheet({
-          title:'我来组成头部',
-          btnList:[
-            {id:'1',str:'我是按钮1'},
-            {id:'2',str:'我是按钮2'},
-            {id:'3',str:'我是按钮3'},
-          ],
+          btnList:arr,
           success:(num)=>{
             this.SNToast('我点击按钮'+num);
           },
           cancel:()=>{
             this.SNToast('我点击返回');
           },
-          key:'id',
-          value:'str'
+          key:'key',
+          value:'value'
         });
     }
   }
