@@ -1,5 +1,5 @@
 <template>
-	<div class="toast-box">
+	<div class="snake-box">
       <div class="toast-msg" v-if="type=='msg'">{{msg}}</div>
       <div class="toast" v-if="type=='success'">
           <i class="toast-icon toast-success-icon"></i>

@@ -3,6 +3,7 @@
  */
 
 import toast from './toast'
+import actionSheet from './actionSheet'
 
 export default{
   install(Vue){
@@ -11,5 +12,8 @@ export default{
     Vue.prototype.SNToast.success =toast.success;
     Vue.prototype.SNToast.error =toast.error;
     Vue.prototype.SNToast.loading =toast.loading;
+
+    //actionSheet
+    Vue.prototype.SNActionSheet=actionSheet;
   }
 }

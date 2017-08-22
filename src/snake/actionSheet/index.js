@@ -26,7 +26,11 @@ function creatActionSheet(options) {
     instance['el']=document.createElement('div');
   }
 
-
+  instance['title'] = '';
+  instance['success'] = ()=>{};
+  instance['cancel'] = ()=>{};
+  instance['key'] = 'id';
+  instance['value'] = 'str';
   for (let prop in options) {
     if (options.hasOwnProperty(prop)) {
       instance[prop] = options[prop];
