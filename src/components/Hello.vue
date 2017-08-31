@@ -7,7 +7,8 @@
       <button @click="SNToast.loading.hide">loadinghidn</button>
       <button @click="SNToast.success()">success</button>
       <button @click="SNToast.error()">error</button>
-      <button @click="showActionSheet()">SNActionSheet</button>
+    <button @click="showActionSheet()">SNActionSheet</button>
+    <button @click="showAlert()">alert</button>
     </div>
   </div>
 </template>
@@ -33,6 +34,7 @@ export default {
         ]
 
         this.SNActionSheet({
+          title:'我来组成头部',
           btnList:arr,
           success:(num)=>{
             this.SNToast('我点击按钮'+num);
@@ -43,6 +45,29 @@ export default {
           key:'key',
           value:'value'
         });
+    },
+    showAlert(){
+//      this.SNAlert('123');
+      this.SNAlert({
+        msg:'我来展示一下啊',
+        btn:[
+          {
+              str:'确定',
+              callback:()=>{
+                this.showtoast();
+              }
+          }, {
+            str:'取消',
+            callback:()=>{
+              this.showtoast();
+            }
+          }
+        ]
+      });
+//        this.SNAlert({
+//          msg:'哈哈哈哈哈哈哈',
+//          btn:111
+//        })
     }
   }
 }

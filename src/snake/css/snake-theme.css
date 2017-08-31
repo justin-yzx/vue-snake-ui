@@ -43,6 +43,17 @@ html,body{
 }
 
 
+.noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Chrome/Safari/Opera */
+  -khtml-user-select: none; /* Konqueror */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently
+not supported by any browser */
+}
+
+
 
 
 
@@ -147,4 +158,47 @@ html,body{
   overflow: hidden;
   margin-top: 8px;
   margin-bottom: 8px;
+}
+
+
+.alert-box{
+  position: absolute;
+  z-index: 5000;
+  width: 70%;
+  height: 120px;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom:0;
+  margin: auto;
+  background: white;
+  text-align: center;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.alert-center{
+  font-size: 14px;
+  height: 70px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 20px;
+}
+.alert-btn-group{
+  height: 40px;
+  line-height: 40px;
+  border-top: 1px solid #bebebe;
+  display: flex;
+  justify-content:space-around ;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+.alert-btn{
+  background: white;
+  flex-grow:4;
+  border-left: 1px solid #bebebe;
+}
+.alert-btn:first-child{
+  border:none;
 }

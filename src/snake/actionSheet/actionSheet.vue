@@ -1,17 +1,17 @@
 <template>
-  <div class="snake-box" style="background: rgba(0,0,0,.4)" >
+  <div class="snake-box noselect" style="background: rgba(0,0,0,.4)" >
     <transition name="fold">
     <div class="action-box" v-show="show">
       <div class="action-contain">
-        <div class="action-title" v-if="title">
+        <div class="action-title noselect" v-if="title">
           {{title}}
 		    </div>
         <div>
-          <div v-for="item in btnList" class="action-btn" @click="clickBtn(getBtnKey(item))">{{getBtnValue(item)}}</div>
+          <div v-for="item in btnList" class="action-btn noselect" @click="clickBtn(getBtnKey(item))">{{getBtnValue(item)}}</div>
         </div>
       </div>
       <div class="action-cancal" @click="cancelClick">
-        <div class="action-btn">取消</div>
+        <div class="action-btn noselect">取消</div>
       </div>
     </div>
     </transition>

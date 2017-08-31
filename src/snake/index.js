@@ -2,8 +2,11 @@
  * Created by mochou on 2017/8/18.
  */
 
+import './css/snake-theme.css'
+
 import toast from './toast'
 import actionSheet from './actionSheet'
+import alertView from './alertView'
 
 export default{
   install(Vue){
@@ -15,5 +18,8 @@ export default{
 
     //actionSheet
     Vue.prototype.SNActionSheet=actionSheet;
+
+    //alertView
+    Vue.prototype.SNAlert=alertView;
   }
 }
