@@ -20,3 +20,8 @@ Vue.use(Snake)
 ## 更多
 
 想了解更多请 [docs for vue-snake-ui](https://snake-yangzexin.github.io/) or [fork for vue-snake-ui](https://github.com/snake-developers/vue-snake-ui).
+
+
+
+## LICENSE
+MIT

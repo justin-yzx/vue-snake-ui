@@ -2,7 +2,7 @@
   <div class="hello">
     {{msg}}
     <div>
-      <button @click="SNToast('123')">toast</button>
+      <button @click="showtoast('123')">toast</button>
       <button @click="SNToast.loading.show">loadingshow</button>
       <button @click="SNToast.loading.hide">loadinghidn</button>
       <button @click="SNToast.success()">success</button>
@@ -47,23 +47,23 @@ export default {
         });
     },
     showAlert(){
-//      this.SNAlert('123');
-      this.SNAlert({
-        msg:'我来展示一下啊',
-        btn:[
-          {
-              str:'确定',
-              callback:()=>{
-                this.showtoast();
-              }
-          }, {
-            str:'取消',
-            callback:()=>{
-              this.showtoast();
-            }
-          }
-        ]
-      });
+      this.SNAlert('123');
+//      this.SNAlert({
+//        msg:'我来展示一下啊',
+//        btn:[
+//          {
+//              str:'确定',
+//              callback:()=>{
+//                this.showtoast();
+//              }
+//          }, {
+//            str:'取消',
+//            callback:()=>{
+//              this.showtoast();
+//            }
+//          }
+//        ]
+//      });
 //        this.SNAlert({
 //          msg:'哈哈哈哈哈哈哈',
 //          btn:111

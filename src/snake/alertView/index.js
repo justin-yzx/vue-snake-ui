@@ -11,7 +11,7 @@ const alertView = (options) => {
   if (typeof options == 'string' || typeof options == 'number') {
     options = {
       msg: options,
-      btn: ['确认']
+      btn: [{'str':'确认',callback(){}}]
     }
   }
   creatAlertView(options);
