@@ -13,7 +13,7 @@
             <button @click="showAlert()">alert</button>
             <SNSwitch v-model="snswitch"></SNSwitch>
             <SNSwitch v-model="snswitch"></SNSwitch>
-
+            <SNCheckBox :list="list" @result="result"></SNCheckBox>
         </div>
     </div>
 </template>
@@ -24,10 +24,18 @@
         data () {
             return {
                 msg: 'Welcome to snake Vue.js App',
-                snswitch: true
+                snswitch: true,
+                list:[
+                    {name:"中国",eng:"ch",checked:false,disabled:true},
+                    {name:"美国",eng:"am",checked:false,disabled:false},
+                    {name:"日本鬼",eng:"jp",checked:true,disabled:false}
+                ]
             }
         },
         methods: {
+            result(res){
+              console.log(res)
+            },
             showtoast(){
                 this.SNToast('snake');
             },
