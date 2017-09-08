@@ -13,7 +13,11 @@
             <button @click="showAlert()">alert</button>
             <SNSwitch v-model="snswitch"></SNSwitch>
             <SNSwitch v-model="snswitch"></SNSwitch>
-
+            <SNDatePicker placeholder="请选择时间" format="yyyy-MM-dd" v-model="datePickerStr"></SNDatePicker>
+            <div>
+                <span>选择后的时间是:</span>
+                <span>{{datePickerStr}}</span>
+            </div>
         </div>
     </div>
 </template>
@@ -24,10 +28,16 @@
         data () {
             return {
                 msg: 'Welcome to snake Vue.js App',
-                snswitch: true
+                snswitch: true,
+                datePickerStr:''
             }
         },
         methods: {
+            getDaysInOneMonth(year,month){
+                month = parseInt(month,10);
+                var d= new Date(year,month,0);  //这个是都可以兼容的
+                return d.getDate();
+            },
             showtoast(){
                 this.SNToast('snake');
             },

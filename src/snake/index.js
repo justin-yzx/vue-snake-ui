@@ -8,6 +8,7 @@ import toast from './toast'
 import actionSheet from './actionSheet'
 import alertView from './alertView'
 import SNSwitch from './form/switch'
+import SNDatePicker from './form/datePicker'
 
 export default{
     install(Vue){
@@ -24,7 +25,8 @@ export default{
         Vue.prototype.SNAlert = alertView;
 
         //form
-        Vue.component('SNSwitch',SNSwitch)
+        Vue.component('SNSwitch',SNSwitch);
+        Vue.component('SNDatePicker',SNDatePicker);
 
     }
 }
