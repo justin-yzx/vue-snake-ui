@@ -18,7 +18,8 @@
                 <span>{{datePickerStr}}</span>
             </div>
 
-            <SNCheckBox :list="list" @result="result"></SNCheckBox>
+            <SNCheckBox :list="list" v-model="result" str="name" keys="id"></SNCheckBox>
+            <div>{{result}}</div>
 
         </div>
     </div>
@@ -33,21 +34,18 @@
                 snswitch: true,
                 datePickerStr:'',
                 list:[
-                    {name:"中国",eng:"ch",checked:false,disabled:true},
-                    {name:"美国",eng:"am",checked:false,disabled:false},
-                    {name:"日本鬼",eng:"jp",checked:true,disabled:false}
-                ]
+                    {name:"中国",id:"ch",checked:false,disabled:false},
+                    {name:"美国",id:"am",checked:false,disabled:false},
+                    {name:"日本鬼",id:"jp",checked:false,disabled:true}
+                ],
+                result:[]
             }
         },
         methods: {
-            result(res){
-              console.log(res)
-            },
             showtoast(){
                 this.SNToast('snake');
             },
             showActionSheet(){
-
                 var arr = [
                     {key: '1', value: '我是按钮1'},
                     {key: '2', value: '我是按钮2'},

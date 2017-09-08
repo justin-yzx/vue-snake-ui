@@ -1,17 +1,11 @@
 <template>
 	<div>
-
-
         <div  v-for="item in datalist" class="checkbox-con">
-
             <label>
-                <input type="checkbox" :value="item.eng" v-model="checkedNames"  class="checkbox checkbox-green" :checked="item.checked" :disabled="item.disabled">
-                <span>{{item.name}}</span>
+                <input type="checkbox" :value="getKey(item)" v-model="checkedNames"  class="checkbox checkbox-green" :checked="item.checked" :disabled="item.disabled">
+                <span>{{getStr(item)}}</span>
             </label>
-
-
         </div>
-
 	</div>
 </template>
 
@@ -24,13 +18,18 @@
             }
 		},
         props:{
-            list:Array
+            list:Array,
+            str:{
+                default:'name'
+            },
+            keys:{
+                default:'id'
+            }
         },
         watch:{
-
             checkedNames:{
                 handler(val, oldVal){
-                    this.$emit("result",val)
+                    this.$emit("input",val)
                 },
                 deep:true
             }
@@ -39,8 +38,16 @@
 		    this.datalist=this.list
             for(var i=0;i<this.list.length;i++){
 		        if(this.list[i].checked){
-                    this.checkedNames.push(this.list[i].eng)
+                    this.checkedNames.push(this.list[i][this.keys])
                 }
+            }
+        },
+        methods:{
+            getKey(item){
+                return item[this.keys];
+            },
+            getStr(item){
+                return item[this.str];
             }
         }
 
