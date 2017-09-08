@@ -8,7 +8,10 @@ import toast from './toast'
 import actionSheet from './actionSheet'
 import alertView from './alertView'
 import SNSwitch from './form/switch'
+
 import SNDatePicker from './form/datePicker'
+
+import SNCheckBox from './form/checkBox'
 
 export default{
     install(Vue){
@@ -27,6 +30,6 @@ export default{
         //form
         Vue.component('SNSwitch',SNSwitch);
         Vue.component('SNDatePicker',SNDatePicker);
-
+        Vue.component('SNCheckBox',SNCheckBox)
     }
 }

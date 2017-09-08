@@ -1,8 +1,6 @@
 <template>
     <div class="hello">
         {{msg}}
-
-
         <div>
             <button @click="showtoast('123')">toast</button>
             <button @click="SNToast.loading.show">loadingshow</button>
@@ -13,11 +11,15 @@
             <button @click="showAlert()">alert</button>
             <SNSwitch v-model="snswitch"></SNSwitch>
             <SNSwitch v-model="snswitch"></SNSwitch>
+
             <SNDatePicker placeholder="请选择时间" format="yyyy-MM-dd" v-model="datePickerStr"></SNDatePicker>
             <div>
                 <span>选择后的时间是:</span>
                 <span>{{datePickerStr}}</span>
             </div>
+
+            <SNCheckBox :list="list" @result="result"></SNCheckBox>
+
         </div>
     </div>
 </template>
@@ -29,14 +31,17 @@
             return {
                 msg: 'Welcome to snake Vue.js App',
                 snswitch: true,
-                datePickerStr:''
+                datePickerStr:'',
+                list:[
+                    {name:"中国",eng:"ch",checked:false,disabled:true},
+                    {name:"美国",eng:"am",checked:false,disabled:false},
+                    {name:"日本鬼",eng:"jp",checked:true,disabled:false}
+                ]
             }
         },
         methods: {
-            getDaysInOneMonth(year,month){
-                month = parseInt(month,10);
-                var d= new Date(year,month,0);  //这个是都可以兼容的
-                return d.getDate();
+            result(res){
+              console.log(res)
             },
             showtoast(){
                 this.SNToast('snake');
