@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="sn-date-box">
         <div @click="choosetime">
             <span v-if="!chooseDate">{{placeholder}}</span>
             <span v-if="chooseDate">{{chooseDate}}</span>
@@ -198,5 +198,9 @@
     }
     .swiper-slide-active{
         color: red;
+    }
+    .sn-date-box{
+        display: inline-block;
+        cursor: pointer;
     }
 </style>

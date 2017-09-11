@@ -1,12 +1,11 @@
 <template>
-    <div class="inlineChange" :class="[getClass(),getSize()]">{{text}}</div>
+    <div class="btn" :class="[getClass(),getSize()]" @click="$emit('click')">{{text}}</div>
 </template>
 
 <script>
     export default {
         data() {
             return {
-                title: '我是頭部'
             }
         },
         props:{
@@ -50,10 +49,10 @@
 </script>
 
 <style>
-    .inlineChange:before{
+    .btn:before{
         content: '';
     }
-    .inlineChange{
+    .btn{
         display: inline-block;
         -webkit-border-radius:3px;
         -moz-border-radius:3px;

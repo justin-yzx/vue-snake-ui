@@ -1,60 +1,60 @@
 <template>
-    <div class="hello">
-        {{msg}}
-        <div>
-            <button @click="showtoast('123')">toast</button>
-            <button @click="SNToast.loading.show">loadingshow</button>
-            <button @click="SNToast.loading.hide">loadinghidn</button>
-            <button @click="SNToast.success()">success</button>
-            <button @click="SNToast.error()">error</button>
-            <button @click="showActionSheet()">SNActionSheet</button>
-            <button @click="showAlert()">alert</button>
+    <div>
+        <div class="snake-show-list">{{msg}}</div>
+        <div class="snake-show-list">
+            <SNButton @click="SNToast('hello snake')" text="SNToast"></SNButton>
+            <SNButton @click="SNToast.loading.show()" text="loadingshow"></SNButton>
+            <SNButton @click="SNToast.loading.hide()" text="loadinghide"></SNButton>
+            <SNButton @click="SNToast.success()" text="success"></SNButton>
+            <SNButton @click="SNToast.error()" text="error"></SNButton>
+        </div>
+        <div class="snake-show-list">
+            <SNButton @click="showActionSheet()" text="SNActionSheet"></SNButton>
+            <SNButton @click="showAlert()" text="SNAlert"></SNButton>
+        </div>
+        <div class="snake-show-list">
+            <SNSwitch v-model="snswitch" size="mini"></SNSwitch>
             <SNSwitch v-model="snswitch"></SNSwitch>
-            <SNSwitch v-model="snswitch"></SNSwitch>
-
-            <SNDatePicker placeholder="请选择时间" format="yyyy-MM-dd" v-model="datePickerStr"></SNDatePicker>
+            <SNSwitch v-model="snswitch" size="large"></SNSwitch>
+        </div>
+        <div class="snake-show-list">
+            <SNDatePicker placeholder="请选择日期" format="yyyy-MM-dd" v-model="datePickerStr"></SNDatePicker>
+        </div>
+        <div class="snake-show-list">
+            <SNCheckBox :list="checkBoxList" v-model="result" str="name" keys="id"></SNCheckBox>
+            <div>选中结果:{{result}}</div>
+        </div>
+        <div class="snake-show-list">
             <div>
-                <span>选择后的时间是:</span>
-                <span>{{datePickerStr}}</span>
+                <SNButton text="默认按钮"></SNButton>
             </div>
-
-            <SNCheckBox :list="list" v-model="result" str="name" keys="id"></SNCheckBox>
-            <div>{{result}}</div>
-
-            <SNButton :type="btnType" :size="btnSize" :text="btnText"></SNButton>
-            <SNButton type="success" size="large" :text="btnText"></SNButton>
-            <SNButton type="error" size="mini" :text="btnText"></SNButton>
-            <SNButton type="" size="middle" :text="btnText"></SNButton>
-
-
+            <div>
+                <SNButton type="success" size="large" text="成功"></SNButton>
+                <SNButton type="error" size="middle" text="失败"></SNButton>
+                <SNButton type="info" size="" text="提示"></SNButton>
+                <SNButton type="warn" size="mini" text="警告"></SNButton>
+            </div>
         </div>
     </div>
 </template>
 
 <script>
     export default {
-        name: 'hello',
-        data () {
+        data() {
             return {
                 msg: 'Welcome to snake Vue.js App',
-                btnType:'warn',
-                btnText:'按钮',
-                snswitch: true,
-                btnSize:'mini',
-                datePickerStr:'',
-                list:[
-                    {name:"中国",id:"ch",checked:false,disabled:false},
-                    {name:"美国",id:"am",checked:false,disabled:false},
-                    {name:"日本鬼",id:"jp",checked:false,disabled:true}
+                datePickerStr: '',
+                checkBoxList: [
+                    {name: "示例1", id: "1", checked: false, disabled: false},
+                    {name: "示例2", id: "2", checked: true, disabled: false},
+                    {name: "示例3", id: "3", checked: false, disabled: false}
                 ],
-                result:[]
+                result: [],
+                snswitch:true,
             }
         },
         methods: {
-            showtoast(){
-                this.SNToast('snake');
-            },
-            showActionSheet(){
+            showActionSheet() {
                 var arr = [
                     {key: '1', value: '我是按钮1'},
                     {key: '2', value: '我是按钮2'},
@@ -74,28 +74,23 @@
                     value: 'value'
                 });
             },
-            showAlert(){
-                this.SNAlert('123');
-//      this.SNAlert({
-//        msg:'我来展示一下啊',
-//        btn:[
-//          {
-//              str:'确定',
-//              callback:()=>{
-//                this.showtoast();
-//              }
-//          }, {
-//            str:'取消',
-//            callback:()=>{
-//              this.showtoast();
-//            }
-//          }
-//        ]
-//      });
-//        this.SNAlert({
-//          msg:'哈哈哈哈哈哈哈',
-//          btn:111
-//        })
+            showAlert() {
+                this.SNAlert({
+                    msg: 'hello snake',
+                    btn: [
+                        {
+                            str: '确定',
+                            callback: () => {
+                                this.SNToast('确定');
+                            }
+                        }, {
+                            str: '取消',
+                            callback: () => {
+                                this.SNToast('取消');
+                            }
+                        }
+                    ]
+                });
             }
         }
     }
@@ -103,21 +98,16 @@
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-    h1, h2 {
-        font-weight: normal;
+    .snake-show-list {
+        padding: 10px;
+        border-bottom: 1px solid #bebebe;
     }
 
-    ul {
-        list-style-type: none;
-        padding: 0;
+    .snake-show-list .btn {
+        margin: 5px;
     }
 
-    li {
-        display: inline-block;
-        margin: 0 10px;
-    }
-
-    a {
-        color: #42b983;
+    .snake-show-list .switch-box {
+        margin: 5px;
     }
 </style>

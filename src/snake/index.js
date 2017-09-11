@@ -14,6 +14,15 @@ import SNDatePicker from './form/datePicker'
 import SNCheckBox from './form/checkBox'
 import SNButton from './button/button.vue'
 
+
+const components={
+    SNSwitch,
+    SNDatePicker,
+    SNCheckBox,
+    SNButton,
+}
+
+
 export default{
     install(Vue){
         //toast提示
@@ -28,10 +37,12 @@ export default{
         //alertView
         Vue.prototype.SNAlert = alertView;
 
-        //form
-        Vue.component('SNSwitch',SNSwitch);
-        Vue.component('SNDatePicker',SNDatePicker);
-        Vue.component('SNCheckBox',SNCheckBox);
-        Vue.component('SNButton',SNButton);
+        //components
+        for(let key in components){
+            Vue.component(key,components[key]);
+        }
+
     }
 }
+
+
