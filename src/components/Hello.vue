@@ -21,6 +21,12 @@
             <SNCheckBox :list="list" v-model="result" str="name" keys="id"></SNCheckBox>
             <div>{{result}}</div>
 
+            <SNButton :type="btnType" :size="btnSize" :text="btnText"></SNButton>
+            <SNButton type="success" size="large" :text="btnText"></SNButton>
+            <SNButton type="error" size="mini" :text="btnText"></SNButton>
+            <SNButton type="" size="middle" :text="btnText"></SNButton>
+
+
         </div>
     </div>
 </template>
@@ -31,7 +37,10 @@
         data () {
             return {
                 msg: 'Welcome to snake Vue.js App',
+                btnType:'warn',
+                btnText:'按钮',
                 snswitch: true,
+                btnSize:'mini',
                 datePickerStr:'',
                 list:[
                     {name:"中国",id:"ch",checked:false,disabled:false},

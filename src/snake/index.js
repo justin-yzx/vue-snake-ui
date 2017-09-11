@@ -12,6 +12,7 @@ import SNSwitch from './form/switch'
 import SNDatePicker from './form/datePicker'
 
 import SNCheckBox from './form/checkBox'
+import SNButton from './button/button.vue'
 
 export default{
     install(Vue){
@@ -30,6 +31,7 @@ export default{
         //form
         Vue.component('SNSwitch',SNSwitch);
         Vue.component('SNDatePicker',SNDatePicker);
-        Vue.component('SNCheckBox',SNCheckBox)
+        Vue.component('SNCheckBox',SNCheckBox);
+        Vue.component('SNButton',SNButton);
     }
 }
