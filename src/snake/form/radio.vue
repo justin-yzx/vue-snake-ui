@@ -1,17 +1,11 @@
 <template>
 	<div>
-
-
         <div>
-
             <label class="demo--label" v-for="item in datalist">
-                <input class="demo--radio" type="radio"  name="demo-radio" :value="item.eng" v-model="checkedNames"  :disabled="item.disabled" >
-                <span class="demo--radioInput" :class="{disable:item.disabled}"></span>{{item.name}}
+                <input class="demo--radio" type="radio"  name="demo-radio" :value="getKeys(item)" :checked="item.checked" v-model="checkedNames"  :disabled="item.disabled" >
+                <span class="demo--radioInput" :class="{disable:item.disabled}"></span>{{getName(item)}}
             </label>
-
-
         </div>
-        {{checkedNames}}
 	</div>
 </template>
 
@@ -20,17 +14,22 @@
 		data(){
 			return {
                 datalist:[],
-                checkedNames:[]
+                checkedNames:''
             }
 		},
         props:{
-            list:Array
+            list:Array,
+            str:{
+                default:'name'
+            },
+            keys:{
+                default:'id'
+            }
         },
         watch:{
             checkedNames:{
                 handler(val, oldVal){
-                    console.log(val)
-                    this.$emit("result",val)
+                    this.$emit("input",val)
                 },
                 deep:true
             }
@@ -39,11 +38,18 @@
             this.datalist=this.list
             for(var i=0;i<this.list.length;i++){
                 if(this.list[i].checked){
-                    this.checkedNames.push(this.list[i].eng)
+                    this.checkedNames=this.list[i][this.keys]
                 }
             }
+        },
+        methods:{
+            getKeys(item){
+                return item[this.keys];
+            },
+            getName(item){
+                return item[this.str];
+            }
         }
-
 	}
 
 </script>

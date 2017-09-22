@@ -25,6 +25,10 @@
             <div>选中结果:{{result}}</div>
         </div>
         <div class="snake-show-list">
+            <SNRadio :list="checkBoxList" v-model="radioResult" str="name" keys="id"></SNRadio>
+            <div>选中结果:{{radioResult}}</div>
+        </div>
+        <div class="snake-show-list">
             <div>
                 <SNButton text="默认按钮"></SNButton>
             </div>
@@ -50,6 +54,7 @@
                     {name: "示例3", id: "3", checked: false, disabled: false}
                 ],
                 result: [],
+                radioResult:'',
                 snswitch:true,
             }
         },
