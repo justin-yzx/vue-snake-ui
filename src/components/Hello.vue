@@ -14,6 +14,7 @@
             <SNSwitch v-model="snswitch"></SNSwitch>
             <SNSwitch v-model="snswitch"></SNSwitch>
             <SNCheckBox :list="list" @result="result"></SNCheckBox>
+            <SNRadio :list="list"></SNRadio>
         </div>
     </div>
 </template>

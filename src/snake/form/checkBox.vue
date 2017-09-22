@@ -12,6 +12,7 @@
 
         </div>
 
+
 	</div>
 </template>
 
@@ -30,6 +31,7 @@
 
             checkedNames:{
                 handler(val, oldVal){
+
                     this.$emit("result",val)
                 },
                 deep:true
@@ -52,6 +54,7 @@
         height: 30px;
         line-height: 30px;
         text-align: left;
+
     }
     .checkbox-con span{
         position: absolute;

@@ -9,6 +9,7 @@ import actionSheet from './actionSheet'
 import alertView from './alertView'
 import SNSwitch from './form/switch'
 import SNCheckBox from './form/checkBox'
+import SNRadio from './form/radio'
 export default{
     install(Vue){
         //toast提示
@@ -26,5 +27,6 @@ export default{
         //form
         Vue.component('SNSwitch',SNSwitch)
         Vue.component('SNCheckBox',SNCheckBox)
+        Vue.component('SNRadio',SNRadio)
     }
 }
