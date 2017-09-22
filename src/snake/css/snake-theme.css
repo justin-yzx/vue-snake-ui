@@ -256,3 +256,50 @@ not supported by any browser */
     transition: left 0.3s; }
 
 
+
+.date-picker-box{
+    height: 200px;
+    background:#d5d8e0;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+.date-picker-title{
+    height: 30px;
+    background: #f1f2f4;
+    border-bottom: 1px solid rgba(219, 219, 220, 0.99);
+    box-sizing: border-box;
+}
+.date-btn{
+    float: left;
+    margin-left: 15px;
+    line-height: 30px;
+    color: #1876f8
+}
+.date-btn:last-child{
+    float: right;
+    margin-right: 15px;
+}
+.date-box{
+    position: absolute;
+    top: 30px;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    justify-content:space-around ;
+    overflow: hidden;
+    padding: 0 20px 0 40px;
+    box-sizing: border-box;
+}
+.date-choose-box{
+    flex-grow:3;
+    display: flex;
+    justify-content:space-around ;
+}
+.date-choose-box>div{
+    width: 50%;
+}
+.date-choose-box-title{
+    line-height: 170px;
+}
