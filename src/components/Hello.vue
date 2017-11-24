@@ -39,6 +39,25 @@
                 <SNButton type="warn" size="mini" text="警告"></SNButton>
             </div>
         </div>
+        <div class="snake-show-list">
+            <SNButtonTab v-model="btnTab">
+                <SNButtonTabItem>文章</SNButtonTabItem>
+                <SNButtonTabItem>商品</SNButtonTabItem>
+                <SNButtonTabItem>照片</SNButtonTabItem>
+            </SNButtonTab>
+        </div>
+        <div class="snake-show-list">
+            <SNImg src="https://cn.vuejs.org/images/logo.png" class="img"></SNImg>
+            <SNImg src="https://ss0.baidu.com/6ONWsjip0QIZ8tyhnq/it/u=3943995189,3132413744&fm=58" class="img"></SNImg>
+        </div>
+        <div class="snake-show-list">
+            <input type="text" v-model="qrcode" class="block center">
+            <SNQrcode v-model="qrcode" class="margin-top-20" :size="size" :colorDark="colorDark" :colorLight="colorLight"></SNQrcode>
+            <div>
+                <SNButton  text="change color" @click="changeColor()"></SNButton>
+                <SNButton  text="change size" @click="changesSize()"></SNButton>
+            </div>
+        </div>
     </div>
 </template>
 
@@ -56,6 +75,11 @@
                 result: [],
                 radioResult:'',
                 snswitch:true,
+                btnTab:1,
+                qrcode:'vue-snake-ui',
+                colorDark:'#51b183',
+                colorLight:'#38485e',
+                size:200,
             }
         },
         methods: {
@@ -96,6 +120,14 @@
                         }
                     ]
                 });
+            },
+            changeColor(){
+                var color=this.colorDark;
+                this.colorDark=this.colorLight;
+                this.colorLight=color;
+            },
+            changesSize(){
+                this.size==200?this.size=180:this.size=200;
             }
         }
     }
@@ -114,5 +146,9 @@
 
     .snake-show-list .switch-box {
         margin: 5px;
+    }
+    .img{
+        width: 30%;
+        display: inline-block;
     }
 </style>

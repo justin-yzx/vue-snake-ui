@@ -1,6 +1,6 @@
 {
     "name": "vue-snake-ui",
-    "version": "1.0.6",
+    "version": "1.0.8",
     "description": "A Vue.js project",
     "author": "snake-team",
     "private": false,
@@ -10,6 +10,7 @@
         "build": "node build/build.js"
     },
     "dependencies": {
+        "davidshimjs-qrcodejs": "0.0.2",
         "swiper": "^3.4.2",
         "vue": "^2.3.3",
         "vue-router": "^2.6.0"

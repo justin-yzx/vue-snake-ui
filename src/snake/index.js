@@ -15,7 +15,14 @@ import SNCheckBox from './form/checkBox'
 
 import SNRadio from './form/radio'
 
-import SNButton from './button/button.vue'
+import SNButton from './button/button'
+
+import SNButtonTab from './buttonTab/buttonTab'
+import SNButtonTabItem from './buttonTab/buttonTabItem'
+
+import SNImg from './img/snakeImg'
+
+import SNQrcode from './qrcode/qrcode.vue'
 
 
 const components={
@@ -24,6 +31,10 @@ const components={
     SNCheckBox,
     SNButton,
     SNRadio,
+    SNButtonTab,
+    SNButtonTabItem,
+    SNImg,
+    SNQrcode
 }
 
 
